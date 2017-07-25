@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends Home</title>
+</head>
+<body>
+    <h2>Welcome, {{request.session.name}}</h2>
+    <a href="/">Logout</a>
+    <a href="/friends/view">View your friends</a>
+    <a href="/friends/add_home">Add a friend</a>
+    <h2>Recent people</h2>
+    <table>
+        {% for user in three %}
+        <tr>
+            <td>{{user.first}} {{user.last}}</td>
+            <td>added {{user.date_added|timesince}} ago </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

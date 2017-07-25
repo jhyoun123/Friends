@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a Friend</title>
+</head>
+<body>
+    <h2>Pick a person to add</h2>
+    {% for non_friend in non_friends %}
+        <a href="/friends/add/{{non_friend.id}}">{{non_friend.first}} {{non_friend.last}}</a>
+    {% endfor %}
+</body>
+</html>
